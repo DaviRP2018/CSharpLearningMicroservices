@@ -11,6 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68C6AD97-A8FB-4A05-B15C-3F90A25E9082}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
+		compose.override.yaml = compose.override.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{E644A084-F889-4719-9302-01E05497C6C4}"

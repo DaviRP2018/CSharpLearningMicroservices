@@ -1,7 +1,7 @@
 ﻿services:
-  catalog.api:
-    image: catalog.api
-    build:
-      context: .
-      dockerfile: src/Services/Catalog/Catalog.Api/Dockerfile
+  catalogdb:
+    image: postgres
 
+volumes:
+  postgres_catalog:
+    
