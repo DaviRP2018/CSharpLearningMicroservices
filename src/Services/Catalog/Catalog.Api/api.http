@@ -1,0 +1,14 @@
+﻿### Environment selection:
+### Use Rider/IDE selector or set with: @env=Development
+
+### Create Product
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Test Product",
+  "category": ["Books", "Fiction"],
+  "description": "A sample product created from api.http",
+  "imageFile": "book.png",
+  "price": 19.99
+}
