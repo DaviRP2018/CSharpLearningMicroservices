@@ -17,6 +17,7 @@ internal class
     public Task<CreateProductResult> Handle(CreateProductCommand request,
         CancellationToken cancellationToken)
     {
+        // Business logic to create a product
         throw new NotImplementedException();
     }
 }
