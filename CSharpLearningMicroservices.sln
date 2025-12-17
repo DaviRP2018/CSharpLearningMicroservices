@@ -1,6 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpLearningMicroservices", "CSharpLearningMicroservices\CSharpLearningMicroservices.csproj", "{66635D49-FD05-43EF-A242-F395160174BD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7BD64086-A031-4C2A-8D84-9E854C0D3F5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{AFEFA5ED-8E89-4856-B30D-4A79E760CDC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F00A4E6-40AB-439D-A101-80A1D2E04501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "src\Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68C6AD97-A8FB-4A05-B15C-3F90A25E9082}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66635D49-FD05-43EF-A242-F395160174BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66635D49-FD05-43EF-A242-F395160174BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66635D49-FD05-43EF-A242-F395160174BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66635D49-FD05-43EF-A242-F395160174BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFEFA5ED-8E89-4856-B30D-4A79E760CDC1} = {7BD64086-A031-4C2A-8D84-9E854C0D3F5A}
+		{7BD64086-A031-4C2A-8D84-9E854C0D3F5A} = {4F00A4E6-40AB-439D-A101-80A1D2E04501}
+		{7E6CF307-5BA9-4350-8F74-F4E9BAE70EF9} = {AFEFA5ED-8E89-4856-B30D-4A79E760CDC1}
 	EndGlobalSection
 EndGlobal
