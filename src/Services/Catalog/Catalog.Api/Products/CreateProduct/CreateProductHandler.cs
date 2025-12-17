@@ -11,7 +11,7 @@ public record CreateProductCommand(
 
 public record CreateProductResult(Guid Id);
 
-public class
+internal class
     CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResult>
 {
     public Task<CreateProductResult> Handle(CreateProductCommand request,
