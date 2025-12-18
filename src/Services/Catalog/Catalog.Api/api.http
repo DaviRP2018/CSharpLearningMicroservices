@@ -12,3 +12,7 @@ Content-Type: application/json
   "imageFile": "book.png",
   "price": 19.99
 }
+
+###
+GET {{baseUrl}}/products
+Content-Type: application/json
