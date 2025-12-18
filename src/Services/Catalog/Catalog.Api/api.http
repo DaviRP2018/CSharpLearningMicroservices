@@ -19,3 +19,7 @@ Content-Type: application/json
 ###
 GET {{baseUrl}}/products
 Content-Type: application/json
+
+###
+GET {{baseUrl}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
+Content-Type: application/json
