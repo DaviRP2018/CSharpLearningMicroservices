@@ -3,15 +3,19 @@
 * Vertical Slice Architecture
 
 ## characteristics of Vertical Slice Architecture
+
 ...
 
 ## benefits & challenges of vertical slice architecture
+
 ...
 
 ## vertical slice architecture vs clean architecture
+
 ...
 
 ## when to use vertical slice architecture
+
 * rapid development & deployment
 * agile & scrum teams
 * microservices
