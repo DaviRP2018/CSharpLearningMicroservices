@@ -2,6 +2,7 @@
 
 // For best practice we define both Request and Response, although we don't need the Request here
 // public record GetProductsRequest;
+
 public record GetProductsResponse(
     IEnumerable<Product> Products
 );
