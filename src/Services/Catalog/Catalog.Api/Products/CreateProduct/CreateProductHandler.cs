@@ -43,7 +43,9 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 /// </summary>
 /// <param name="session">Marten IDocumentSession used for persisting the new product.</param>
 internal class
-    CreateProductCommandHandler(IDocumentSession session)
+    CreateProductCommandHandler(
+        IDocumentSession session,
+        IValidator<CreateProductCommand> validator)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command,
@@ -51,9 +53,15 @@ internal class
     {
         // Business logic to create a product
 
+        var result = await validator.ValidateAsync(command, cancellationToken);
+        var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
+        if (errors.Count != 0)
+            throw new ValidationException(errors.FirstOrDefault());
+
         // Create a Product entity from a command object
         var product = new Product
         {
+            Id = Guid.NewGuid(),
             Name = command.Name,
             Category = command.Category,
             Description = command.Description,
