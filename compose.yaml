@@ -3,7 +3,7 @@
     image: postgres
   
   catalog.api:
-    image: ${DOCKER_REGISTRY-}catalogapi
+    image: ${DOCKER_REGISTRY-}catalog.api
     build:
       context: .
       dockerfile: src/Services/Catalog/Catalog.Api/Dockerfile
