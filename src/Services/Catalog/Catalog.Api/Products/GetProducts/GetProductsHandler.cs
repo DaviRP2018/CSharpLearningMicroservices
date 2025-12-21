@@ -25,15 +25,12 @@ public record GetProductsResult(
 /// <param name="session">Marten IDocumentSession for database access.</param>
 /// <param name="logger">The logger instance for logging internal operations.</param>
 internal class GetProductsQueryHandler(
-    IDocumentSession session,
-    ILogger<GetProductsQueryHandler> logger)
+    IDocumentSession session)
     : IQueryHandler<GetProductsQuery, GetProductsResult>
 {
     public async Task<GetProductsResult> Handle(GetProductsQuery query,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("GetProductsQueryHandler.Handle called with {@Query}", query);
-
         var products = await session.Query<Product>().ToListAsync(cancellationToken);
         return new GetProductsResult(products);
     }

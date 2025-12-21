@@ -22,15 +22,12 @@ public record GetProductsByCategoryResult(IEnumerable<Product> Products);
 /// <param name="session">The IDocumentSession used for database queries.</param>
 /// <param name="logger">The logger for capturing diagnostic information.</param>
 internal class GetProductsByCategoryQueryHandler(
-    IDocumentSession session,
-    ILogger<GetProductsByCategoryQueryHandler> logger)
+    IDocumentSession session)
     : IQueryHandler<GetProductsByCategoryQuery, GetProductsByCategoryResult>
 {
     public async Task<GetProductsByCategoryResult> Handle(GetProductsByCategoryQuery query,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation(
-            "GetProductsByCategoryQueryHandler.Handle called with query {@Query}", query);
         var products = await session
             .Query<Product>()
             .Where(p => p.Category

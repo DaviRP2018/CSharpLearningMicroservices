@@ -44,16 +44,13 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 /// <param name="session">Marten IDocumentSession used for persisting the new product.</param>
 internal class
     CreateProductCommandHandler(
-        IDocumentSession session,
-        ILogger<CreateProductCommandHandler> logger)
+        IDocumentSession session)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command,
         CancellationToken cancellationToken)
     {
         // Business logic to create a product
-        logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}",
-            command);
 
         // Create a Product entity from a command object
         var product = new Product
