@@ -1,6 +1,4 @@
-﻿using Basket.API.Basket.GetBasket;
-
-namespace Basket.API.Basket.StoreBasket;
+﻿namespace Basket.API.Basket.StoreBasket;
 
 public record StoreBasketRequest(ShoppingCart Cart);
 
@@ -18,7 +16,7 @@ public class StoreBasketEndpoints : ICarterModule
 
                 return Results.Created($"/basket/{response.UserName}", response);
             }).WithName("StoreBasketEndpoints")
-            .Produces<GetBasketResponse>(StatusCodes.Status201Created)
+            .Produces<StoreBasketResponse>(StatusCodes.Status201Created)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithSummary("Store or update basket")
             .WithDescription("Store or update basket");
