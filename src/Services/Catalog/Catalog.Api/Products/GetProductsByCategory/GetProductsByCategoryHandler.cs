@@ -20,7 +20,6 @@ public record GetProductsByCategoryResult(IEnumerable<Product> Products);
 ///     This illustrates how business logic (filtering) is isolated within the handler.
 /// </summary>
 /// <param name="session">The IDocumentSession used for database queries.</param>
-/// <param name="logger">The logger for capturing diagnostic information.</param>
 internal class GetProductsByCategoryQueryHandler(
     IDocumentSession session)
     : IQueryHandler<GetProductsByCategoryQuery, GetProductsByCategoryResult>

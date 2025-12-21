@@ -23,7 +23,6 @@ public record GetProductByIdResult(Product Product);
 ///     It uses MediatR (via IQueryHandler) to decouple the request from its execution.
 /// </summary>
 /// <param name="session">Marten IDocumentSession used to interact with the underlying database.</param>
-/// <param name="logger">The logger instance used for recording diagnostic information.</param>
 internal class GetProductByIdQueryHandler(
     IDocumentSession session)
     : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>

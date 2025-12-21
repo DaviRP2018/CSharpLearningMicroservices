@@ -24,7 +24,6 @@ public record GetProductsResult(
 ///     Handlers encapsulate the 'how' of a request, keeping the API thin and focused.
 /// </summary>
 /// <param name="session">Marten IDocumentSession for database access.</param>
-/// <param name="logger">The logger instance for logging internal operations.</param>
 internal class GetProductsQueryHandler(
     IDocumentSession session)
     : IQueryHandler<GetProductsQuery, GetProductsResult>
