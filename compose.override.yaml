@@ -1,6 +1,4 @@
-﻿version: '3.8'
-
-services:
+﻿services:
   catalogdb:
     container_name: catalogdb
     environment:
@@ -12,3 +10,34 @@ services:
       - "5432:5432"
     volumes:
       - postgres_catalog:/var/lib/postgresql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d CatalogDb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  catalog.api:
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORTS: 8081
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "${CERT_PASSWORD}"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ConnectionStrings__Database: >
+        Server=catalogdb;
+        Port=5432;
+        Database=CatalogDb;
+        User Id=postgres;
+        Password=postgres;
+        Include Error Detail=true
+    ports:
+      - "6000:8080"
+      - "6060:8081"
+    volumes:
+      - ${USERPROFILE}/.aspnet/https:/https/:ro
+    depends_on:
+      catalogdb:
+        condition: service_healthy
+
+volumes:
+  postgres_catalog:

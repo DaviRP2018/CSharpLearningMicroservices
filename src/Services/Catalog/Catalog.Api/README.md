@@ -42,3 +42,10 @@
 * features
 * data
 * abstractions
+
+# 5. Running docker over HTTPS
+
+* https://learn.microsoft.com/pt-br/aspnet/core/security/docker-https?view=aspnetcore-10.0#running-pre-built-container-images-with-https
+* dotnet dev-certs https -ep %USERPROFILE%\.aspnet\https\aspnetapp.pfx -p <CERT_PASSWORD>
+* dotnet dev-certs https --trust
+* Update .env with CERT_PASSWORD
