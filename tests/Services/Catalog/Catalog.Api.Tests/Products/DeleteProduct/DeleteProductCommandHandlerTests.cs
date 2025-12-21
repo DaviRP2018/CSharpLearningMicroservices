@@ -17,7 +17,7 @@ public class DeleteProductCommandHandlerTests
     {
         _sessionMock = new Mock<IDocumentSession>();
         _loggerMock = new Mock<ILogger<DeleteProductCommandHandler>>();
-        _handler = new DeleteProductCommandHandler(_sessionMock.Object, _loggerMock.Object);
+        _handler = new DeleteProductCommandHandler(_sessionMock.Object);
     }
 
     [Fact]
