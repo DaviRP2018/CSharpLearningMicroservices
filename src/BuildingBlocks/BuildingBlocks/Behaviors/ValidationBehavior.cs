@@ -7,7 +7,7 @@ namespace BuildingBlocks.Behaviors;
 // IEnumerable validators: Because we are going to validate every type of IValidator from endpoints
 public class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators)
     : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : ICommand<TRequest>
+    where TRequest : ICommand<TResponse>
 {
     public async Task<TResponse> Handle(
         TRequest request,

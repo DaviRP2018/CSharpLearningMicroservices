@@ -45,18 +45,15 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 internal class
     CreateProductCommandHandler(
         IDocumentSession session,
-        IValidator<CreateProductCommand> validator)
+        ILogger<CreateProductCommandHandler> logger)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command,
         CancellationToken cancellationToken)
     {
         // Business logic to create a product
-
-        var result = await validator.ValidateAsync(command, cancellationToken);
-        var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
-        if (errors.Count != 0)
-            throw new ValidationException(errors.FirstOrDefault());
+        logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}",
+            command);
 
         // Create a Product entity from a command object
         var product = new Product

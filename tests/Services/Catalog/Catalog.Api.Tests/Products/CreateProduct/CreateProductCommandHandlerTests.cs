@@ -1,24 +1,23 @@
 ﻿using Catalog.Api.Models;
 using Catalog.Api.Products.CreateProduct;
 using FluentAssertions;
-using FluentValidation;
-using FluentValidation.Results;
 using Marten;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace Catalog.Api.Tests.Products.CreateProduct;
 
 public class CreateProductCommandHandlerTests
 {
+    private readonly Mock<ILogger<CreateProductCommandHandler>> _loggerMock;
     private readonly CreateProductCommandHandler _handler;
     private readonly Mock<IDocumentSession> _sessionMock;
-    private readonly Mock<IValidator<CreateProductCommand>> _validatorMock;
 
     public CreateProductCommandHandlerTests()
     {
         _sessionMock = new Mock<IDocumentSession>();
-        _validatorMock = new Mock<IValidator<CreateProductCommand>>();
-        _handler = new CreateProductCommandHandler(_sessionMock.Object, _validatorMock.Object);
+        _loggerMock = new Mock<ILogger<CreateProductCommandHandler>>();
+        _handler = new CreateProductCommandHandler(_sessionMock.Object, _loggerMock.Object);
     }
 
     [Fact]
@@ -32,10 +31,6 @@ public class CreateProductCommandHandlerTests
             "test.png",
             100.00m
         );
-
-        _validatorMock
-            .Setup(v => v.ValidateAsync(command, It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new ValidationResult());
 
         // Act
         var result = await _handler.Handle(command, CancellationToken.None);
@@ -55,35 +50,9 @@ public class CreateProductCommandHandlerTests
         _sessionMock.Verify(s => s.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
     }
 
-    [Fact]
-    public async Task Handle_WithInvalidCommand_ShouldThrowValidationException()
-    {
-        // Arrange
-        var command = new CreateProductCommand(
-            "", // Invalid name
-            ["Test Category"],
-            "Test Description",
-            "test.png",
-            100.00m
-        );
-
-        var validationFailures = new List<ValidationFailure>
-        {
-            new("Name", "Name is required")
-        };
-
-        _validatorMock
-            .Setup(v => v.ValidateAsync(command, It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new ValidationResult(validationFailures));
-
-        // Act
-        Func<Task> act = async () => await _handler.Handle(command, CancellationToken.None);
-
-        // Assert
-        await act.Should().ThrowAsync<ValidationException>()
-            .WithMessage("Name is required");
-
-        _sessionMock.Verify(s => s.Store(It.IsAny<Product>()), Times.Never);
-        _sessionMock.Verify(s => s.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
-    }
+    /*
+     * Note: Validation is handled by ValidationBehavior in the MediatR pipeline,
+     * not by the CommandHandler itself.
+     * These tests focus on the Handler logic assuming validation has passed.
+     */
 }
