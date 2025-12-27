@@ -1,0 +1,52 @@
+﻿### Environment selection:
+### Use Rider/IDE selector or set with: @env=Development
+
+### Create Product
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Test Product",
+  "category": [
+    "Books",
+    "Fiction"
+  ],
+  "description": "A sample product created from api.http",
+  "imageFile": "book.png",
+  "price": 19.99
+}
+
+### Store Basket
+POST {{baseUrl}}/basket
+Content-Type: application/json
+
+{
+  "cart": {
+    "userName": "swn",
+    "items": [
+      {
+        "quantity": 2,
+        "color": "Red",
+        "price": 500,
+        "productId": "019b2eee-3ded-4fe0-b1b7-64a7346dedd8",
+        "productName": "IPhone X"
+      },
+      {
+        "quantity": 1,
+        "color": "Blue",
+        "price": 500,
+        "productId": "019b2eee-3ded-4fe0-b1b7-64a7346dedd9",
+        "productName": "Samsung 10"
+      }
+    ]
+  }
+}
+
+###
+GET {{baseUrl}}/products
+Content-Type: application/json
+
+###
+GET {{baseUrl}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
+Content-Type: application/json
+
