@@ -1,4 +1,5 @@
-﻿global using Basket.API.Data;
+﻿global using System.Text.Json;
+global using Basket.API.Data;
 global using Basket.API.Exceptions;
 global using Basket.API.Models;
 global using BuildingBlocks.Behaviors;
@@ -11,3 +12,4 @@ global using Mapster;
 global using Marten;
 global using Marten.Pagination;
 global using MediatR;
+global using Microsoft.Extensions.Caching.Distributed;
