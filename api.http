@@ -1,13 +1,6 @@
-﻿### Environment selection:
-### Use Rider/IDE selector or set with: @env=Development
-
-### Basket Health Check
-GET {{baseUrl}}/health
-Content-Type: application/json
-
-
+﻿### ====================================== Product =====================================
 ### Create Product
-POST {{baseUrl}}/products
+POST {{container.url.http.catalog}}/products
 Content-Type: application/json
 
 {
@@ -21,8 +14,22 @@ Content-Type: application/json
   "price": 19.99
 }
 
+### Get Products List
+GET {{container.url.http.catalog}}/products
+Content-Type: application/json
+
+### Get One Product By ID
+GET {{container.url.http.catalog}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
+Content-Type: application/json
+
+
+### ====================================== Basket =====================================
+### Basket Health Check
+GET {{container.url.http.basket}}/health
+Content-Type: application/json
+
 ### Store Basket
-POST {{baseUrl}}/basket
+POST {{container.url.http.basket}}/basket
 Content-Type: application/json
 
 {
@@ -48,14 +55,9 @@ Content-Type: application/json
 }
 
 ### Get Basket
-GET {{baseUrl}}/basket/swn
+GET {{container.url.http.basket}}/basket/swn
 Content-Type: application/json
 
-### Get Products List
-GET {{baseUrl}}/products
-Content-Type: application/json
 
-### Get One Product By ID
-GET {{baseUrl}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
-Content-Type: application/json
-
+### ====================================== Discount =====================================
+GRPC {{local.url.http.discount}}/greet.Greeter/SayHello
