@@ -60,4 +60,14 @@ Content-Type: application/json
 
 
 ### ====================================== Discount =====================================
-GRPC {{local.url.http.discount}}/greet.Greeter/SayHello
+### GetDiscount
+GRPC {{local.url.http.discount}}/discount.DiscountProtoService/GetDiscount
+
+### CreateDiscount
+GRPC {{local.url.http.discount}}/discount.DiscountProtoService/CreateDiscount
+
+### UpdateDiscount
+GRPC {{local.url.http.discount}}/discount.DiscountProtoService/UpdateDiscount
+
+### DeleteDiscount
+GRPC {{local.url.http.discount}}/discount.DiscountProtoService/DeleteDiscount
