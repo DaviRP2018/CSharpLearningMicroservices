@@ -38,3 +38,22 @@ services:
     - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices:/src:rw"
     - "C:\\Users\\davis\\.nuget\\packages:/home/app/.nuget/packages"
     working_dir: "/app"
+  discount.grpc:
+    build:
+      context: "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices"
+      dockerfile: "src/Services/Discount.Grpc/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/Discount.Grpc.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "discount.grpc:dev"
+    ports: []
+    volumes:
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices\\src\\Services\\\
+      Discount.Grpc:/app:rw"
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices:/src:rw"
+    - "C:\\Users\\davis\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"

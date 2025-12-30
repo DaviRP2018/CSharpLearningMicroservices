@@ -1,6 +1,6 @@
-﻿### ====================================== Product =====================================
+﻿# ====================================== Product =====================================
 ### Create Product
-POST {{container.url.http.catalog}}/products
+POST {{container.url.https.catalog}}/products
 Content-Type: application/json
 
 {
@@ -15,21 +15,21 @@ Content-Type: application/json
 }
 
 ### Get Products List
-GET {{container.url.http.catalog}}/products
+GET {{container.url.https.catalog}}/products
 Content-Type: application/json
 
 ### Get One Product By ID
-GET {{container.url.http.catalog}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
+GET {{container.url.https.catalog}}/products/019b2eee-3ded-4fe0-b1b7-64a7346dedd8
 Content-Type: application/json
 
 
-### ====================================== Basket =====================================
+# ====================================== Basket =====================================
 ### Basket Health Check
-GET {{container.url.http.basket}}/health
+GET {{container.url.https.basket}}/health
 Content-Type: application/json
 
 ### Store Basket
-POST {{container.url.http.basket}}/basket
+POST {{container.url.https.basket}}/basket
 Content-Type: application/json
 
 {
@@ -55,19 +55,19 @@ Content-Type: application/json
 }
 
 ### Get Basket
-GET {{container.url.http.basket}}/basket/swn
+GET {{container.url.https.basket}}/basket/swn
 Content-Type: application/json
 
 
-### ====================================== Discount =====================================
+# ====================================== Discount =====================================
 ### GetDiscount
-GRPC {{local.url.http.discount}}/discount.DiscountProtoService/GetDiscount
+GRPC {{container.url.https.discount}}/discount.DiscountProtoService/GetDiscount
 
 ### CreateDiscount
-GRPC {{local.url.http.discount}}/discount.DiscountProtoService/CreateDiscount
+GRPC {{container.url.https.discount}}/discount.DiscountProtoService/CreateDiscount
 
 ### UpdateDiscount
-GRPC {{local.url.http.discount}}/discount.DiscountProtoService/UpdateDiscount
+GRPC {{container.url.https.discount}}/discount.DiscountProtoService/UpdateDiscount
 
 ### DeleteDiscount
-GRPC {{local.url.http.discount}}/discount.DiscountProtoService/DeleteDiscount
+GRPC {{container.url.https.discount}}/discount.DiscountProtoService/DeleteDiscount

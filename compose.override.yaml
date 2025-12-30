@@ -92,6 +92,13 @@
       - basketdb
       - distributedcache
 
-volumes:
-  postgres_catalog:
-  postgres_basket:
+  discount.grpc:
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "${CERT_PASSWORD}"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ConnectionStrings__Database: "Data Source=discountdb"
+    ports:
+      - "6062:8081"
+    volumes:
+      - ${USERPROFILE}/.aspnet/https:/https/:ro
