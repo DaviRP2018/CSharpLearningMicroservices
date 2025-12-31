@@ -64,6 +64,7 @@
       - "6000:8080"
       - "6060:8081"
     volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${USERPROFILE}/.aspnet/https:/https/:ro
     depends_on:
       catalogdb:
@@ -82,15 +83,18 @@
         User Id=postgres;
         Password=postgres;
         Include Error Detail=true
-      ConnectionStrings__Redis: "distributedcache:6379"
+      ConnectionStrings__Redis: distributedcache:6379
+      GrpcSettings__DiscountUrl: https://discount.grpc:8081
     ports:
       - "6001:8080"
       - "6061:8081"
     volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${USERPROFILE}/.aspnet/https:/https/:ro
     depends_on:
       - basketdb
       - distributedcache
+      - discount.grpc
 
   discount.grpc:
     environment:
@@ -99,10 +103,11 @@
       ASPNETCORE_HTTPS_PORTS: 8081
       ASPNETCORE_Kestrel__Certificates__Default__Password: "${CERT_PASSWORD}"
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
-      ConnectionStrings__Database: "Data Source=discountdb"
+      ConnectionStrings__Database: "Data Source=discountdb.db"
     ports:
       - "6002:8080"
       - "6062:8081"
     volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${USERPROFILE}/.aspnet/https:/https/:ro
       - discount_data:/data
