@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7993bb3-c414-4a21-86c6-12db8436a2c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/Data/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Data/DiscountContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/Data/DiscountContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Migrations/20251230060037_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Migrations/20251230060037_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Migrations/DiscountContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Models/Coupon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/Models/Coupon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Discount.Grpc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/discountdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/discountdb-shm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/discountdb-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.override.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

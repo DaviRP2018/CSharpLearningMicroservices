@@ -61,13 +61,4 @@ Content-Type: application/json
 
 # ====================================== Discount =====================================
 ### GetDiscount
-GRPC {{container.url.https.discount}}/discount.DiscountProtoService/GetDiscount
-
-### CreateDiscount
-GRPC {{container.url.https.discount}}/discount.DiscountProtoService/CreateDiscount
-
-### UpdateDiscount
-GRPC {{container.url.https.discount}}/discount.DiscountProtoService/UpdateDiscount
-
-### DeleteDiscount
-GRPC {{container.url.https.discount}}/discount.DiscountProtoService/DeleteDiscount
+GRPC {{container.url.http.discount}}/discount.DiscountProtoService/GetDiscount

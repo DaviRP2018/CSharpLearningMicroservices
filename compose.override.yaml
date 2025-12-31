@@ -95,10 +95,14 @@
   discount.grpc:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+      ASPNETCORE_HTTPS_PORTS: 8081
       ASPNETCORE_Kestrel__Certificates__Default__Password: "${CERT_PASSWORD}"
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
       ConnectionStrings__Database: "Data Source=discountdb"
     ports:
+      - "6002:8080"
       - "6062:8081"
     volumes:
       - ${USERPROFILE}/.aspnet/https:/https/:ro
+      - discount_data:/data
