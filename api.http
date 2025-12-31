@@ -62,3 +62,37 @@ Content-Type: application/json
 # ====================================== Discount =====================================
 ### GetDiscount
 GRPC {{container.url.http.discount}}/discount.DiscountProtoService/GetDiscount
+
+{
+  "productName": "IPhone X"
+}
+
+### CreateDiscount
+GRPC {{container.url.http.discount}}/discount.DiscountProtoService/CreateDiscount
+
+{
+  "coupon": {
+    "productName": "IPhone X",
+    "description": "IPhone X Discount",
+    "amount": 150
+  }
+}
+
+### UpdateDiscount
+GRPC {{container.url.http.discount}}/discount.DiscountProtoService/UpdateDiscount
+
+{
+  "coupon": {
+    "id": 1,
+    "productName": "IPhone X",
+    "description": "IPhone X Updated Discount",
+    "amount": 200
+  }
+}
+
+### DeleteDiscount
+GRPC {{container.url.http.discount}}/discount.DiscountProtoService/DeleteDiscount
+
+{
+  "productName": "IPhone X"
+}
