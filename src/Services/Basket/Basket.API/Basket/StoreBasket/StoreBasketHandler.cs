@@ -19,6 +19,7 @@ public class StoreBasketCommandHandler(IBasketRepository repository)
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken
         cancellationToken)
     {
+        // TODO: communicate with discount.grpc and calculate lastest price
         var cart = command.Cart;
 
         // TODO: store basket in DB (use Marten upsert)
