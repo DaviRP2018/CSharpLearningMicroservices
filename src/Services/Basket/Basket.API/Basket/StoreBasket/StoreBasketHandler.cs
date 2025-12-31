@@ -23,8 +23,16 @@ public class StoreBasketCommandHandler(
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken
         cancellationToken)
     {
-        // TODO: communicate with discount.grpc and calculate lastest price
-        foreach (var item in command.Cart.Items)
+        await DeductDiscount(command.Cart, cancellationToken);
+        await repository.StoreBasket(command.Cart, cancellationToken);
+
+        return new StoreBasketResult(command.Cart.UserName);
+    }
+
+    private async Task DeductDiscount(ShoppingCart cart, CancellationToken cancellationToken)
+    {
+        // Communicate with Discount.Grpc and calculate lastest prices of products
+        foreach (var item in cart.Items)
         {
             var coupon = await discountProto.GetDiscountAsync(new GetDiscountRequest
             {
@@ -32,11 +40,5 @@ public class StoreBasketCommandHandler(
             }, cancellationToken: cancellationToken);
             item.Price -= coupon.Amount;
         }
-
-        // TODO: store basket in DB (use Marten upsert)
-        //  update cache
-        await repository.StoreBasket(command.Cart, cancellationToken);
-
-        return new StoreBasketResult(command.Cart.UserName);
     }
 }
