@@ -16,8 +16,8 @@ public static class DatabaseExtensions
     private static async Task SeedAsync(ApplicationDbContext context)
     {
         await SeedCustomerAsync(context);
-        // await SeedProductAsync(context);
-        // await SeedOrderAndItemsAsync(context);
+        await SeedProductAsync(context);
+        await SeedOrderAndItemsAsync(context);
     }
 
     private static async Task SeedCustomerAsync(ApplicationDbContext context)
@@ -25,6 +25,24 @@ public static class DatabaseExtensions
         if (!await context.Customers.AnyAsync())
         {
             await context.Customers.AddRangeAsync(InitialData.Customers);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static async Task SeedProductAsync(ApplicationDbContext context)
+    {
+        if (!await context.Products.AnyAsync())
+        {
+            await context.Products.AddRangeAsync(InitialData.Products);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static async Task SeedOrderAndItemsAsync(ApplicationDbContext context)
+    {
+        if (!await context.Orders.AnyAsync())
+        {
+            await context.Orders.AddRangeAsync(InitialData.OrderWithItems);
             await context.SaveChangesAsync();
         }
     }
