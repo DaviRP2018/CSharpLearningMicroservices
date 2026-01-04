@@ -1,9 +1,10 @@
 ﻿using System.Reflection;
+using Ordering.Application.Data;
 
 namespace Ordering.Infrastructure.Data;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-    : DbContext(options)
+    : DbContext(options), IApplicationDbContext
 {
     public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<Product> Products => Set<Product>();
