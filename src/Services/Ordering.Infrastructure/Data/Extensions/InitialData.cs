@@ -40,7 +40,7 @@ public class InitialData
             var order1 = Order.Create(
                 OrderId.Of(Guid.NewGuid()),
                 CustomerId.Of(new Guid("9dbc33d1-2398-4b96-adc4-2752846e5b90")),
-                OrderName.Of("Order 1"),
+                OrderName.Of("ORD1"),
                 address1,
                 address1,
                 payment1
@@ -51,7 +51,7 @@ public class InitialData
             var order2 = Order.Create(
                 OrderId.Of(Guid.NewGuid()),
                 CustomerId.Of(new Guid("68a41639-2658-4839-a201-aa1968ae8e3e")),
-                OrderName.Of("Order 2"),
+                OrderName.Of("ORD2"),
                 address2,
                 address2,
                 payment2
