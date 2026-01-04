@@ -9,5 +9,6 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             productId => productId.Value,
             dbId => ProductId.Of(dbId));
         builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+        builder.Property(p => p.Price).HasPrecision(18, 2);
     }
 }
