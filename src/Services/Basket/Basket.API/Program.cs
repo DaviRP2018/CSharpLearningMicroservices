@@ -1,3 +1,4 @@
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -16,6 +17,7 @@ builder.Services.AddMediatR(config =>
     config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
+
 // =============================== Data services ===============================
 builder.Services.AddMarten(opts =>
 {
@@ -30,6 +32,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetConnectionString("Redis");
 });
+
 
 // =============================== gRPC services ===============================
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
@@ -46,6 +49,11 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
         return handler;
     });
 
+
+// =============================== Async Communication services ===============================
+builder.Services.AddMessageBroker(builder.Configuration);
+
+
 // =============================== Cross-Cutting services ===============================
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
@@ -54,6 +62,7 @@ builder.Services.AddHealthChecks()
     .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline
 app.MapCarter();
