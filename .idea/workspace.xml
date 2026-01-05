@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7993bb3-c414-4a21-86c6-12db8436a2c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharpLearningMicroservices/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3cd44ea0-9483-4256-9ce5-4e5dc8232575.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3cd44ea0-9483-4256-9ce5-4e5dc8232575/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ca2cc3ba-da44-4ceb-b8fe-5c7421f4b8cc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ca2cc3ba-da44-4ceb-b8fe-5c7421f4b8cc/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.override.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Discount.Grpc/discountdb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Ordering.API/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Ordering.API/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
