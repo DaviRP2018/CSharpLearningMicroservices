@@ -57,3 +57,40 @@ services:
     - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices:/src:rw"
     - "C:\\Users\\davis\\.nuget\\packages:/home/app/.nuget/packages"
     working_dir: "/app"
+  ordering.api:
+    build:
+      context: "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices"
+      dockerfile: "src/Services/Ordering.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/Ordering.API.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "ordering.api:dev"
+    ports: []
+    volumes:
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices\\src\\Services\\\
+      Ordering.API:/app:rw"
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices:/src:rw"
+    - "C:\\Users\\davis\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  yarpapigateway:
+    build:
+      context: "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices"
+      dockerfile: "src/YarpApiGateway/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/YarpApiGateway.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "yarpapigateway:dev"
+    ports: []
+    volumes:
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices\\src\\YarpApiGateway:/app:rw"
+    - "J:\\Users\\davis\\RiderProjects\\CSharpLearningMicroservices:/src:rw"
+    - "C:\\Users\\davis\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
