@@ -43,6 +43,12 @@
     build:
       context: .
       dockerfile: src/YarpApiGateway/Dockerfile
+  
+  shopping.web:
+    image: shopping.web
+    build:
+      context: .
+      dockerfile: src/WebApps/Shopping.Web/Dockerfile
 
 volumes:
   postgres_catalog:
