@@ -33,7 +33,7 @@ public class ShoppingCartItemTests
     }
 
     [Fact]
-    public void ShoppingCartItem_Initialization_ShouldHaveDefaultValues()
+    public void ShoppingCartItem_DefaultValues_ShouldBeCorrect()
     {
         // Arrange
         var quantity = 0;

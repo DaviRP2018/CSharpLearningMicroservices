@@ -3,8 +3,13 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ARedisHealthCheck_002Ecs_002Fl_003AC_0021_003FUsers_003Fdavis_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E3_003Fresharper_002Dhost_003FSourcesCache_003F8b135ba4cde84dde5fd2d2b9c93e672cc3cc64ee42cba4e97143b971a1b4e7b_003FRedisHealthCheck_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ARequestDelegateFactory_002Ecs_002Fl_003AC_0021_003FUsers_003Fdavis_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fc122dc6196c2679e6afe8e125bcd1ff18735d2b014810e358113f75cbc554a8_003FRequestDelegateFactory_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/dotCover/Editor/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\davis\AppData\Local\JetBrains\Rider2025.3\resharper-host\temp\Rider\vAny\CoverageData\_CSharpLearningMicroservices.-1061766697\Snapshot\snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2944893c_002D1851_002D4d85_002D86ff_002D0bbd1cf66893/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;src&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2944893c_002D1851_002D4d85_002D86ff_002D0bbd1cf66893/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;src&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="J:\Users\davis\RiderProjects\CSharpLearningMicroservices" Presentation="&amp;lt;src&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7ce84f90_002D6ae2_002D4e9e_002D860e_002Deb90f45871f3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Junie Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::EBDEE9F5-5085-42DA-83E0-6D6B0277D0BD::net10.0::Basket.API.Tests.Basket.GetBasket.GetBasketEndpointsTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	
