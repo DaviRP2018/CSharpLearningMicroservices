@@ -27,7 +27,7 @@ public class CheckoutModel(IBasketService basketService, ILogger<CheckoutModel> 
 
         // Assumption customerId is passed in from the UI authenticated user swn
         // TODO: fix this GUID, it shouldn't be hardcoded
-        Order.CustomerId = new Guid("58c49479-ec65-4de2-86e7-033c546291aa");
+        Order.CustomerId = new Guid("9dbc33d1-2398-4b96-adc4-2752846e5b90");
         Order.UserName = Cart.UserName;
         Order.TotalPrice = Cart.TotalPrice;
 
