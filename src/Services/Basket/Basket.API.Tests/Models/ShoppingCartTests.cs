@@ -1,7 +1,9 @@
 ﻿using Basket.API.Models;
+using JetBrains.Annotations;
 
 namespace Basket.API.Tests.Models;
 
+[TestSubject(typeof(ShoppingCart))]
 public class ShoppingCartTests
 {
     [Fact]
